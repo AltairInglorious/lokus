@@ -1,0 +1,21 @@
+{
+  "name": "lokus",
+  "type": "module",
+  "version": "0.2.13",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist/"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "prepublishOnly": "bunx tsc",
+    "build": "bunx tsc"
+  },
+  "dependencies": {
+    "zod": "^3.25.32"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  }
+}
