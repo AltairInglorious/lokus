@@ -1,7 +1,7 @@
 {
   "name": "lokus",
   "type": "module",
-  "version": "0.2.14",
+  "version": "0.2.15",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "files": [
@@ -16,6 +16,21 @@
     "type": "git",
     "url": "https://github.com/AltairInglorious/lokus.git"
   },
+  "description": "Lokus is a library for i18n purposes to manage dictionaries. Currently WIP",
+  "bugs": {
+    "url": "https://github.com/AltairInglorious/lokus/issues"
+  },
+  "author": {
+    "name": "Adam",
+    "url": "https://github.com/AltairInglorious"
+  },
+  "keywords": [
+    "i18n",
+    "lokus",
+    "localization",
+    "internationalization",
+    "translation"
+  ],
   "dependencies": {
     "zod": "^3.25.32"
   },
