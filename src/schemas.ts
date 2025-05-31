@@ -4,7 +4,6 @@ export const LokusDictionarySchema = z.object({
 	type: z.literal("dictionary"),
 	base: z.record(z.string(), z.string()),
 	baseLanguage: z.string(),
-	languages: z.array(z.string()),
 	dictionaries: z.record(z.string(), z.record(z.string(), z.string())),
 	timestamp: z.number().int().positive(),
 });

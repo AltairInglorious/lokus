@@ -10,7 +10,6 @@ export type LokusDictionaryFile<
 	type: "dictionary";
 	base: DictionaryType;
 	baseLanguage: BaseLanguageType;
-	languages: LanguagesType[];
 	dictionaries: Record<LanguagesType, Partial<DictionaryType>>;
 	timestamp: number;
 };

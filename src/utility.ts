@@ -17,7 +17,6 @@ export function extractBaseLanguage<
 		type: "dictionary",
 		base: data.base,
 		baseLanguage: data.baseLanguage,
-		languages: [],
 		dictionaries: {},
 		timestamp,
 	};
@@ -40,13 +39,12 @@ export function combineTranslations<
 		if (translation.type !== "translate") {
 			throw new Error("Invalid translation file type");
 		}
-		if (ret.languages.includes(translation.language)) {
+		if(translation.language in ret.dictionaries){
 			ret.dictionaries[translation.language] = {
 				...ret.dictionaries[translation.language],
 				...translation.dictionary,
 			};
-		} else {
-			ret.languages.push(translation.language);
+		}else{
 			ret.dictionaries[translation.language] = translation.dictionary;
 		}
 	}
