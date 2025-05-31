@@ -83,7 +83,7 @@ export function generateTSConfigFile<
 	for (const [key, value] of Object.entries(data.base)) {
 		ret += `\t\t"${key}": "${value}",\n`;
 	}
-	ret += "\t};\n";
+	ret += "\t},\n";
 
 	ret += "\tdictionaries: {\n";
 	for (const [language, dictionary] of Object.entries(data.dictionaries)) {
@@ -94,7 +94,7 @@ export function generateTSConfigFile<
 		}
 		ret += "\t\t};\n";
 	}
-	ret += "};\n";
+	ret += "\t},\n";
 
 	ret += "};\n";
 	return ret;
