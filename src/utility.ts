@@ -92,7 +92,7 @@ export function generateTSConfigFile<
 		for (const key of keys) {
 			ret += `\t\t\t"${key}": "${dictionary[key]}",\n`;
 		}
-		ret += "\t\t};\n";
+		ret += "\t\t},\n";
 	}
 	ret += "\t},\n";
 
