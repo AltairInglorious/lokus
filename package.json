@@ -1,12 +1,26 @@
 {
   "name": "lokus",
   "type": "module",
-  "version": "0.3.8",
+  "version": "0.3.12",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "files": [
     "dist/"
   ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./*": {
+      "import": "./dist/*.js",
+      "require": "./dist/*.cjs"
+    },
+    "./generators": {
+      "import": "./dist/generators/index.js",
+      "require": "./dist/generators/index.cjs"
+    }
+  },
   "license": "MIT",
   "scripts": {
     "prepublishOnly": "bunx tsc",
