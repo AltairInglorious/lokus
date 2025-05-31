@@ -97,5 +97,37 @@ export function generateTSConfigFile<
 	ret += "\t},\n";
 
 	ret += "};\n";
+
+	ret += `
+
+export type LokusDictionaryType = Record<
+	keyof typeof LokusDictionary.base,
+	string
+>;
+
+export function getLokusLanguage(
+	lang?: string,
+):
+	| keyof typeof LokusDictionary.dictionaries
+	| typeof LokusDictionary.baseLanguage {
+	if (!lang) return LokusDictionary.baseLanguage;
+	if (lang in LokusDictionary.dictionaries) {
+		return lang as keyof typeof LokusDictionary.dictionaries;
+	}
+	return LokusDictionary.baseLanguage;
+}
+
+export function getLokusDictionary(
+	language:
+		| keyof typeof LokusDictionary.dictionaries
+		| typeof LokusDictionary.baseLanguage,
+): LokusDictionaryType {
+	if (language === LokusDictionary.baseLanguage) return LokusDictionary.base;
+	return {
+		...LokusDictionary.base,
+		...LokusDictionary.dictionaries[language],
+	};
+}`;
+
 	return ret;
 }
